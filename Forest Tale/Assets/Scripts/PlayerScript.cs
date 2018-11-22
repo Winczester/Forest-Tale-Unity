@@ -13,14 +13,15 @@ public class PlayerScript : MonoBehaviour {
     public LayerMask WhatIsGround;
     public float GroundRadius = 0.2f;
     public UnityEvent OnLandEvent;
-
-    //PRIVATE Variables(hide from other eyes)
-
-    private float jumpForce = 280f;
-    private bool grounded;
-    private bool FacingRight = true;
     public static int Gems;
     public static int Lives = 3;
+    public GameObject Start;
+    public float jumpForce;
+
+    //PRIVATE Variables
+
+    private bool grounded;
+    private bool FacingRight = true;
     private float move;
     private Vector3 playerPosition;
     private Rigidbody2D Hero;
@@ -72,6 +73,7 @@ public class PlayerScript : MonoBehaviour {
         {
             Hero.AddForce(new Vector2(0, jumpForce));
             animator.SetBool("IsJumping", true); // Jumping animation
+            Debug.Log(Time.fixedDeltaTime);
 
         }
 
@@ -124,7 +126,7 @@ public class PlayerScript : MonoBehaviour {
         //... enemie
         if (collision.gameObject.tag == "enemie")
         {
-            Hero.position = playerPosition;
+            Hero.position = Start.transform.position;
             Lives-=1;
             Debug.Log("Lives--");
         }
@@ -132,7 +134,7 @@ public class PlayerScript : MonoBehaviour {
         //... falling
         if (collision.gameObject.tag == "falling")
         {
-            Hero.position = playerPosition;
+            Hero.position = Start.transform.position;
             Lives-=1;
             Debug.Log("Lives--");
         }

@@ -7,7 +7,7 @@ public class MainMenuScript : MonoBehaviour {
 
 	public void PlayPressed()
     {
-        SceneManager.LoadScene("test scene");
+        SceneManager.LoadScene("lvl 1");
     }
 
     public void ExitPresed()

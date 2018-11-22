@@ -4,14 +4,14 @@ using UnityEngine;
 
 public class OpossumMoveScript : MonoBehaviour {
 
-    public float speed = 2f;
-    private float direction = -1;
+    public float speed;
     private Rigidbody2D Opossum;
-    
+    private float direction;
 
     private void Awake()
     {
         Opossum = GetComponent<Rigidbody2D>();
+        direction = -Opossum.transform.localScale.x;
         
     }
 
@@ -19,7 +19,7 @@ public class OpossumMoveScript : MonoBehaviour {
     {
         Opossum.velocity = new Vector2(speed * direction, Opossum.velocity.y);// Opossum movement
 
-        transform.localScale = new Vector3(-direction, 1, 1);
+        transform.localScale = new Vector3(-direction, Opossum.transform.localScale.y, Opossum.transform.localScale.z);
 
         //Saving Opossum position
         if (Input.GetKeyDown(KeyCode.R))

@@ -69,7 +69,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1067176692719616}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.777, y: 0.082, z: 0}
+  m_LocalPosition: {x: 5.437, y: 2.388, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4595809658022444}
@@ -192,7 +192,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 86bc34cd0982d984d9971d2e57b73988, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 1.5
+  speed: 1.9
   GroundCheck: {fileID: 4595809658022444}
   WhatIsGround:
     serializedVersion: 2
@@ -214,6 +214,8 @@ MonoBehaviour:
         m_CallState: 1
     m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
       Culture=neutral, PublicKeyToken=null
+  Start: {fileID: 0}
+  jumpForce: 300
 --- !u!212 &212708630414900324
 SpriteRenderer:
   m_ObjectHideFlags: 1
